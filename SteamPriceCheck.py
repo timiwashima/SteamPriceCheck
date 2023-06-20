@@ -14,6 +14,12 @@ games={
        'Kingdoms and Castles':'https://store.steampowered.com/app/569480/Kingdoms_and_Castles/'
        }
 
+prices={
+        'Street Fighter 6':40,
+        'Monster Hunter Rise':20,
+        'Kingdoms and Castles':10
+        }
+
 for game,url in games.items():
     gameName=game
     gameURL=url
@@ -24,19 +30,10 @@ for game,url in games.items():
     element=soup.find('div',{'class':'game_purchase_price price'})
     price=element.text.strip()
     priceNoCurrency=float(price[1:])
-
-    if gameName=='Street Fighter 6':
-        if priceNoCurrency<=20:
-            print(gameName + ' is less than $20.  You should buy it.')
-        else:
-            print(gameName + " is more than you want to spend.  Wait for a sale.")
-    if gameName=='Monster Hunter Rise':
-        if priceNoCurrency<=20:
-            print(gameName + ' is less than $20.  You should buy it.')
-        else:
-            print(gameName + ' is more than you want to spend.  Wait for a sale.')
-    if gameName=='Kingdoms and Castles':
-        if priceNoCurrency<=10:
-            print(gameName + ' is less than $10.  You should buy it.')
-        else:
-            print(gameName + ' is more than you want to spend.  Wait for a sale.')
+    
+    for key in prices:
+        if gameName==key:
+            if priceNoCurrency<=prices[gameName]:
+                print(gameName + ' is less than $' + str(prices[gameName]) + '.  You should buy it.')
+            else:
+                print(gameName + ' is more than $' + str(prices[gameName]) + '.  Wait for a sale.')
