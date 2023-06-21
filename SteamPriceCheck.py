@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Jun 21 07:06:38 2023
-
+Inform you when a game on Steam is the price you want to pay or less'
 @author: tiwashima
 """
 import requests
 from bs4 import BeautifulSoup
 
+#Put in the game title, the URL for the Steam Page, and the price you want to pay
 games={
        'Street Fighter 6':
            {'url':'https://store.steampowered.com/app/1364780/Street_Fighter_6/',
