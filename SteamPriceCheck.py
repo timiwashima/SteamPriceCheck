@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Jun 21 07:06:38 2023
+Created on Wed Jun 17 07:06:38 2023
 Inform you when a game on Steam is the price you want to pay or less'
 @author: tiwashima
 """
